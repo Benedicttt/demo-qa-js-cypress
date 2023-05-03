@@ -2,5 +2,8 @@ node_modules
 runner-results
 allure-results
 allure-report
+tests/downloads
+tests/videos
+tests/screenshots
 .idea
 test
