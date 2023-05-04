@@ -35,6 +35,8 @@ describe('Smoke tests DEMOQA: Main page', () => {
                 let elems = cy.get(".card > div > .card-body > h5");
 
                 elems.each((elem) => {
+                    cy.allure().step(elem.text())
+
                     arr_elem.push(elem.text())
                     cy.log(elem.text())
                 })

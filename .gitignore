@@ -8,3 +8,4 @@ tests/screenshots
 .idea
 test
 package-lock.json
+cypress

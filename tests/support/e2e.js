@@ -1,5 +1,7 @@
+import 'cypress-mochawesome-reporter/register';
 import '@shelex/cypress-allure-plugin';
 import {allure} from "./helpers";
+
 const config = Cypress.config()
 
 Cypress.on('uncaught:exception', (err, runnable) => {

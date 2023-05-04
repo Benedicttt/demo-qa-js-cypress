@@ -4,6 +4,7 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
     e2e: {
         setupNodeEvents(on, config) {
+            require('cypress-mochawesome-reporter/plugin')(on);
             allureWriter(on, config);
             return config;
         },
@@ -24,18 +25,14 @@ module.exports = defineConfig({
     },
 
     projectId: "1",
-    browser: "chrome",
-    headless: false,
-    reporter: "mochawesome",
-    screenshotsFolder: 'tests/screenshots',
+    reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
-        reportDir: "results",
-        overwrite: false,
-        html: false,
-        json: true,
-        record: false
-    }
-
+        charts: true,
+        reportPageTitle: 'custom-title',
+        embeddedScreenshots: true,
+        inlineAssets: true,
+        saveAllAttempts: false,
+    },
 });
 
 
