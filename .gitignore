@@ -7,3 +7,4 @@ tests/videos
 tests/screenshots
 .idea
 test
+package-lock.json

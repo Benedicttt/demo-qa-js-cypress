@@ -2,29 +2,22 @@
 
 The tests are executed on [CircleCI](https://app.circleci.com/pipelines/github/Benedicttt/cypress), see configuration file [circle.yml](.circleci/config.yml). One job generates Mochawesome report, while the second one stores JUnit test results. Both jobs store automatic screenshots and videos.
 
-## Mochawesome
+### Demo project framework with allure and cypress 12 
 
-On each CI run, the generated Mochawesome report is stored as a test artifact
+***
+#### How run?
 
-![test artifact](images/ci-view.png)
+if you have *ntl*, that runn ntl end select from menu commands, or
 
-The report is a static site
 
-![test report](images/junit-fail-pass.png)
 
-## JUnit
+$ `npx cypress run -b chrome` - simple run test
 
-JUnit test results are generated using NPM script `test:junit` and are stored on Circle.
+$ `npx cypress run --headless --browser chrome --headless  --env allure=true` - run test with charm reports and Chrome browser has been assigned, headless mode 
 
-![JUnit pass](images/junit-fail-pass2.png)
+$ `npx cypress run --headless --browser electron --headless  --env allure=true` - run test with charm reports and Electron  has been assigned, headless mode
 
-When a test fails, the error message and stack trace is shown in the test results
-
-![JUnit fail](images/junit-fail-pass3.png)
-
-Screenshots and videos stored as test artifacts can help debug the failures
-
-![Test artifacts](images/reports.png)
+$ `npx cypress-parallel --browser chrome -s cypress:run -t 10 -d 'tests/spec/**/**.js' --weightsJson 'tests/parallel-weights.json' --env allure=true  --headed` - run test with 3 threads and allure report. This  command need if you want to run many tests at once.
 
 
 ***Creator project Serhii Kyivskyi***

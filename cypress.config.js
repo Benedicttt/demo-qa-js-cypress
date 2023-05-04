@@ -8,7 +8,8 @@ module.exports = defineConfig({
             return config;
         },
         env: {
-            allureReuseAfterSpec: true
+            allureReuseAfterSpec: true,
+            allureAddVideoOnPass: true
         },
 
         baseUrl: "https://demoqa.com",
@@ -20,7 +21,21 @@ module.exports = defineConfig({
         fixturesFolder: 'tests/fixtures',
 
         testIsolation: false,
+    },
+
+    projectId: "1",
+    browser: "chrome",
+    headless: false,
+    reporter: "mochawesome",
+    screenshotsFolder: 'tests/screenshots',
+    reporterOptions: {
+        reportDir: "results",
+        overwrite: false,
+        html: false,
+        json: true,
+        record: false
     }
+
 });
 
 
